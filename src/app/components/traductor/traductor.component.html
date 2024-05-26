@@ -1,0 +1,76 @@
+<div class="d-flex justify-content-center mt-3">
+    <h1 class="p-2">Traductor de Idiomas</h1>
+</div>
+
+<div class="container mt-4 mb-5">
+    <div class="row">
+        <div class="col-11 col-md-10 col-lg-8 border rounded mx-auto bg-body-secondary">
+            <!-- DIV LENGUAJES-->
+            <div class="d-flex justify-content-center">
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaOrigen" value="it" [(ngModel)]="source">
+                    <img src="/assets/images/flag-italy.png" class="m-1" alt="" width="25px">
+                    <label for="italiano">Italiano</label>
+                </div>
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaOrigen" value="fr" [(ngModel)]="source">
+                    <img src="/assets/images/flag-france.png" class="m-1" alt="" width="25px">
+                    <label for="frances">Francés</label>
+                </div>
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaOrigen" value="en" [(ngModel)]="source">
+                    <img src="/assets/images/flag-gb.png" class="m-1" alt="" width="25px">
+                    <label for="ingles">Inglés</label>
+                </div>
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaOrigen" value="es" [(ngModel)]="source">
+                    <img src="/assets/images/flag-spain.png" class="m-1" alt="" width="25px">
+                    <label for="espanol">Español</label>
+                </div>
+            </div>
+
+            <!-- DIV INGRESAR TEXTO-->
+            <div class="mb-3 mt-3 d-flex justify-content-center">
+                <textarea class="form-control w-75" id="texto" rows="3" placeholder="Ingresar texto"
+                    [(ngModel)]="text"></textarea>
+            </div>
+
+
+            <!-- DIV LENGUAJES-->
+            <div class="d-flex justify-content-center">
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaDestino" value="it" [(ngModel)]="target">
+                    <img src="/assets/images/flag-italy.png" class="m-1" alt="" width="25px">
+                    <label for="italiano">Italiano</label>
+                </div>
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaDestino" value="fr" [(ngModel)]="target">
+                    <img src="/assets/images/flag-france.png" class="m-1" alt="" width="25px">
+                    <label for="frances">Francés</label>
+                </div>
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaDestino" value="en" [(ngModel)]="target">
+                    <img src="/assets/images/flag-gb.png" class="m-1" alt="" width="25px">
+                    <label for="ingles">Inglés</label>
+                </div>
+                <div class=" m-3">
+                    <input type="radio" class="m-1" name="idiomaDestino" value="es" [(ngModel)]="target">
+                    <img src="/assets/images/flag-spain.png" class="m-1" alt="" width="25px">
+                    <label for="espanol">Español</label>
+                </div>
+            </div>
+
+            <!-- BOTON TRADUCIR-->
+            <div class="m-2 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary w-75" (click)="traducirTexto()">TRADUCIR</button>
+            </div>
+
+            <!-- DIV TRADUCCION-->
+            <div class="mb-3 mt-4 d-flex justify-content-center">
+                <textarea class="form-control w-75" id="traduccion" rows="3"
+                    placeholder="Traducción">{{textoTraducido}}</textarea>
+            </div>
+
+        </div>
+    </div>
+</div>

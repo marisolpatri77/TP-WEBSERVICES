@@ -1,0 +1,95 @@
+<div class="mb-2">
+    <div class="mt-3 mb-5">
+        <h1 class="text-center fw-bold">Marca de carros de lujo</h1>
+    </div>
+    
+    <div class="container mb-4">
+    
+        <div class="row">
+    
+            <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+                <ul>
+                    <li *ngFor="let marca of marcasAutosParte1">
+                        <button class="text-decoration-none text-dark btn-link border-0 bg-transparent"
+                            (click)="obtenerModelosAutos(marca)">
+                            {{marca.name}}
+                        </button>
+                    </li>
+    
+                </ul>
+            </div>
+    
+            <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+                <ul>
+                    <li *ngFor="let marca of marcasAutosParte2">
+                        <button class="text-decoration-none text-dark btn-limk border-0 bg-transparent"
+                            (click)="obtenerModelosAutos(marca)">
+                            {{marca.name}}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+                <ul>
+                    <li *ngFor="let marca of marcasAutosParte3">
+                        <button class="text-decoration-none text-dark btn-link border-0 bg-transparent"
+                            (click)="obtenerModelosAutos(marca)">
+                            {{marca.name}}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col-6 col-md-3 col-lg-2 d-flex justify-content-center">
+                <ul>
+                    <li *ngFor="let marca of marcasAutosParte4">
+                        <button class="text-decoration-none text-dark btn-link border-0 bg-transparent"
+                            (click)="obtenerModelosAutos(marca)">
+                            {{marca.name}}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col-12 col-md-8 col-lg-4 p-2">
+                <img src="/assets/images/logo-brands.png" alt="" class="img-fluid d-none d-lg-block">
+            </div>
+        </div>
+    
+    </div>
+    
+    
+    <!--MODAL-->
+    <div *ngIf="mostrarModal" (click)="cerrarModal()" class="modal-backdrop fade show"></div>
+    <!-- Modal -->
+    <div class="modal fade" data-bs-backdrop="static" [ngClass]="{'show d-block': mostrarModal}" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+    
+                <div class="modal-header">
+                    <h5 class="modal-title fs-5" id="staticBackdropLabel">Modelos de {{marcaSeleccionada?.name}}: </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        (click)="cerrarModal()"></button>
+                </div>
+    
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody>
+                            <tr *ngFor="let modelo of modelosAutos">
+                                <td><i class="bi bi-car-front"></i> {{modelo.name}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>

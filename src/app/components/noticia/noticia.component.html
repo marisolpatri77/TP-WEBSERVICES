@@ -1,16 +1,16 @@
 
-<div class="mt-3">
+<!--div class="mt-2 mb-0">
     <button type="submit" class="btn btn-success" (click)="obtenerNoticias()">Obtener Noticias</button>
-</div>
+</div-->
 
 
-<div class="container-fluid mt-4">
-    <div>
-        <h3 class="m-2">Noticias Destacadas</h3>
+<div class="container-fluid mt-2">
+    <div class="d-flex justify-content-center mt-0 mb-2">
+        <h1 class="m-2 display-1 fw-bold mt-0">Últimas Noticias</h1>
     </div>
     <div class="row mb-1">
         <div class="col-12 col-sm-12 col-md-8 mb-2 pt-2"> <!-- border-->
-            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2"> <!--lg-3 era-->
+            <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-2"> 
                 <div class="card text-justify mb-3 mx-auto" style="width: 18rem;" *ngFor="let n of noticias">
                     <img [src]="n.mainMedia[0].original.url" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -36,26 +36,24 @@
 </div>
 
 
-<!--MODAL-->
 
-<div>
-    <div *ngIf="noticia" class="modal show d-block fade" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-          <div class="modal-content">
 
-            <div class="modal-header bg-primary">
-              <h6 class="modal-title text-light">{{ tituloModal}}</h6>
-              <button type="button" class="btn-close" (click)="cerrarModal()" aria-label="Close"></button>
-            </div>
-
-            <div class="modal-body bg-body-secondary">
-              <div [innerHTML]="info"></div>
-            </div>
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" (click)="cerrarModal()">Cerrar</button>
-            </div>
-          </div>
+<!-- Modal -->
+<div *ngIf="noticia" class="modal-backdrop fade show"></div>
+<div class="modal fade" data-bs-backdrop="static" [ngClass]="{'show d-block': noticia}" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title fs-5" id="staticBackdropLabel">{{ tituloModal}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                (click)="cerrarModal()"></button>
         </div>
-      </div>
+        <div class="modal-body">
+          <div [innerHTML]="info"></div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+  </div> 
 </div>
