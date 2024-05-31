@@ -18,7 +18,7 @@ export class NoticiaComponent {
   tituloModal: string= '';
 
   constructor(private noticiaService: NoticiaService) { 
-    this.obtenerNoticias();
+    //this.obtenerNoticias();
   }
 
   obtenerNoticias(): void {

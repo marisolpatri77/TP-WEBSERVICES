@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div><h3 class="text-center mt-3">TABLA</h3></div>
+        <div class="col-12 col-md-10 col-lg-8 mx-auto p-4 mt-3 mb-4">
+            <table class="table table-bordered table-hover">
+                <thead>
+                  <tr> <!--fila-->
+                    <th scope="col">#</th> <!--table header-->
+                    <th scope="col">Usernamet</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Otra Info</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--tr *ngFor="let usu of usuarios">
+                    <th scope="row"></th>
+                    <td>{{usu.username}}</td>
+                    <td>{{usu.email}}</td>
+                    <td>{{usu.password}}</td>
+                    <td>
+                        <button class="btn btn-danger">Borrar</button>
+                        <button class="btn btn-warning">Modificar</button>
+                    </td>
+                  </tr-->
+                </tbody>
+              </table>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" (click)="imprimir()">Imprimir Listado</button>
+        </div>
+    </div>
+</div>

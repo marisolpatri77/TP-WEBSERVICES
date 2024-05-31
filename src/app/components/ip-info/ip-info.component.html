@@ -37,7 +37,7 @@
                     <h6 class="text-center mb-2">INFORMACIÓN DE LA UBICACIÓN DE LA IP</h6>
 
                     <div class="mb-2 p-1">
-                        <p><strong>Fecha del lugar: </strong> {{ ipInfo.timezone.date }} </p>
+                        <p><strong>Fecha del lugar: </strong> {{ ipInfo.timezone.date | date : 'd/M/yy'}} </p>
                     </div>
 
                     <div class="mb-2 p-1">

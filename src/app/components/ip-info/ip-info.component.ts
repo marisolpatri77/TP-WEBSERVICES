@@ -16,7 +16,7 @@ export class IpInfoComponent {
   ipInfo: any = null;
  
   constructor(private ipInfoService: IPinfoService) { 
-    this.obtenerInfoIp(this.ipDato);
+    //this.obtenerInfoIp(this.ipDato);
   }
 
   obtenerInfoIp(ip: string): void {

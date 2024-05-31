@@ -22,7 +22,7 @@ export class MarcasAutosComponent {
   marcaSeleccionada: any = null;
 
   constructor(private marcaAutosService: MarcasAutosService) { 
-    this.obtenerMarcasAutos();
+    //this.obtenerMarcasAutos();
   }
 
   obtenerMarcasAutos(): void {

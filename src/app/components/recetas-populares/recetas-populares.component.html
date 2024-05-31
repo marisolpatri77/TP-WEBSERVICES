@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div><h3 class="text-center mt-3">RECETAS POPULARES</h3></div>
+        <div class="col-12 col-md-10 col-lg-8 mx-auto p-4 mt-3 mb-4">
+            <table class="table table-bordered table-hover">
+                <thead>
+                  <tr> <!--fila-->
+                     <!--table header-->
+                    <th scope="col">Path</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Categoría</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let receta of recetas"><!--fila-->
+                    <th><button type="submit" class="btn btn-success" (click)="detalleRecetasPopulares(receta.path)">Ver Receta</button></th>
+                    <td>{{receta.title}}</td>
+                    <td><img [src]="receta.image" alt=""></td>
+                    <td>{{receta.newCategory}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+
+<!--Modal-->
+
+<div *ngIf="receta" class="modal-backdrop fade show" ></div> <!--class="modal-backdrop fade show" para hacer oscuro el fondo-->
+
+<div class="modal fade" id="exampleModal" [ngClass]="{'show d-block': receta}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{tituloReceta}} </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cerrarModal()"></button>
+      </div>
+
+      <div class="modal-body">
+          <div>
+            <h5>Ingredientes</h5>
+            <ul *ngFor="let ingrediente of receta.Ingredientes">
+              <li>{{ingrediente}}</li>
+            </ul>
+          </div>
+          <div>
+            <h5>Preparación</h5>
+            <ul *ngFor="let paso of preparacion">
+              <p>{{paso}}</p>
+            </ul>
+          </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="cerrarModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
